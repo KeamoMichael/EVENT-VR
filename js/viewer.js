@@ -29,6 +29,7 @@ const mobileSceneCurrent = document.getElementById('mobile-scene-current');
 const mobileScenePanel = document.getElementById('mobile-scene-panel');
 const mobileSceneClose = document.getElementById('mobile-scene-close');
 const mobileSceneList = document.getElementById('mobile-scene-list');
+const mobileAssetToggle = document.getElementById('mobile-asset-toggle');
 const mobileAssetPanel = document.getElementById('mobile-asset-panel');
 const mobileAssetTitle = document.getElementById('mobile-asset-panel-title');
 const mobileAssetList = document.getElementById('mobile-asset-list');
@@ -82,6 +83,7 @@ let currentAssetImageIndex = 0;
 let galleryTouchStartX = null;
 let galleryTouchDeltaX = 0;
 let isMobileScenePanelOpen = false;
+let isMobileAssetPanelOpen = false;
 const SECTION_ASSETS = { Exterior: [], Interior: [] };
 
 function resize() {
@@ -237,6 +239,13 @@ function setMobileScenePanel(open) {
   mobileSceneToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
 }
 
+function setMobileAssetPanel(open) {
+  isMobileAssetPanelOpen = open;
+  mobileAssetPanel.classList.toggle('hidden', !open);
+  mobileAssetPanel.setAttribute('aria-hidden', open ? 'false' : 'true');
+  mobileAssetToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+
 function getSceneSection(scene) {
   return scene.name.startsWith('Exterior') ? 'Exterior' : 'Interior';
 }
@@ -253,8 +262,15 @@ function refreshMobileAssetList(section) {
     button.addEventListener('click', () => openAssetModal(asset));
     mobileAssetList.appendChild(button);
   });
-  mobileAssetPanel.classList.toggle('hidden', assets.length === 0);
-  mobileAssetPanel.setAttribute('aria-hidden', assets.length === 0 ? 'true' : 'false');
+  mobileAssetToggle.disabled = assets.length === 0;
+  if (assets.length === 0) {
+    mobileAssetPanel.classList.add('hidden');
+    mobileAssetPanel.setAttribute('aria-hidden', 'true');
+    if (isMobileAssetPanelOpen) setMobileAssetPanel(false);
+    return;
+  }
+  mobileAssetPanel.classList.toggle('hidden', !isMobileAssetPanelOpen);
+  mobileAssetPanel.setAttribute('aria-hidden', isMobileAssetPanelOpen ? 'false' : 'true');
 }
 
 function buildHotspots(scene) {
@@ -457,6 +473,11 @@ mobileSceneToggle.addEventListener('click', () => {
 
 mobileSceneClose.addEventListener('click', () => {
   setMobileScenePanel(false);
+});
+
+mobileAssetToggle.addEventListener('click', () => {
+  if (mobileAssetToggle.disabled) return;
+  setMobileAssetPanel(!isMobileAssetPanelOpen);
 });
 
 function renderSpherical() {

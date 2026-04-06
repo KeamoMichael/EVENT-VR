@@ -518,6 +518,21 @@ canvas#panorama {
   text-align: left;
 }
 
+#mobile-asset-toggle {
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 20px;
+  margin-top: 10px;
+  backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  letter-spacing: 1px;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
 .mobile-scene-toggle-label {
   font-size: 10px;
   letter-spacing: 3px;
@@ -547,7 +562,7 @@ canvas#panorama {
 }
 
 #mobile-asset-panel {
-  margin-top: 12px;
+  margin-top: 0;
   padding: 14px;
   border-radius: 24px;
   border: 1px solid var(--panel-border);
