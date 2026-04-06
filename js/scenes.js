@@ -213,9 +213,8 @@ const SCENES = [
         pitch: 4,
         hitScale: 1.2,
         images: [
-          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area01.png",
-          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area02.png",
-          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area03.png"
+          "images/INDOOR VR IMAGES/Indoor Setup01.png",
+          "images/INDOOR VR IMAGES/Indoor Setup02.png"
         ]
       },
       {
@@ -227,9 +226,8 @@ const SCENES = [
         pitch: 4,
         hitScale: 1.2,
         images: [
-          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area01.png",
-          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area02.png",
-          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area03.png"
+          "images/INDOOR VR IMAGES/Indoor Setup01.png",
+          "images/INDOOR VR IMAGES/Indoor Setup02.png"
         ]
       },
       {
@@ -253,8 +251,8 @@ const SCENES = [
         pitch: 1,
         hitScale: 1.2,
         images: [
-          "images/LED SCREENS/INDOOR LED SCREEN01.png",
-          "images/LED SCREENS/INDOOR LED SCREEN02.png"
+          "images/INDOOR VR IMAGES/Indoor Setup01.png",
+          "images/INDOOR VR IMAGES/Indoor Setup02.png"
         ]
       }
     ]
@@ -275,9 +273,8 @@ const SCENES = [
         pitch: 4,
         hitScale: 1.2,
         images: [
-          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area01.png",
-          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area02.png",
-          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area03.png"
+          "images/INDOOR VR IMAGES/Indoor Setup01.png",
+          "images/INDOOR VR IMAGES/Indoor Setup02.png"
         ]
       },
       {
@@ -289,9 +286,8 @@ const SCENES = [
         pitch: 4,
         hitScale: 1.2,
         images: [
-          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area01.png",
-          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area02.png",
-          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area03.png"
+          "images/INDOOR VR IMAGES/Indoor Setup01.png",
+          "images/INDOOR VR IMAGES/Indoor Setup02.png"
         ]
       },
       {
@@ -326,9 +322,8 @@ const SCENES = [
         pitch: 4,
         hitScale: 1.2,
         images: [
-          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area01.png",
-          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area02.png",
-          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area03.png"
+          "images/INDOOR VR IMAGES/Indoor Setup01.png",
+          "images/INDOOR VR IMAGES/Indoor Setup02.png"
         ]
       },
       {
@@ -340,9 +335,8 @@ const SCENES = [
         pitch: 4,
         hitScale: 1.2,
         images: [
-          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area01.png",
-          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area02.png",
-          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area03.png"
+          "images/INDOOR VR IMAGES/Indoor Setup01.png",
+          "images/INDOOR VR IMAGES/Indoor Setup02.png"
         ]
       }
     ]
