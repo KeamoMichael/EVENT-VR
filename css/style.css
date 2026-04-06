@@ -546,6 +546,22 @@ canvas#panorama {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
 }
 
+#mobile-asset-panel {
+  margin-top: 12px;
+  padding: 14px;
+  border-radius: 24px;
+  border: 1px solid var(--panel-border);
+  background:
+    radial-gradient(circle at top, rgba(201, 169, 110, 0.08), transparent 44%),
+    rgba(6, 6, 6, 0.9);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
+}
+
+#mobile-asset-panel.hidden {
+  display: none;
+}
+
 .mobile-scene-panel-header {
   display: flex;
   align-items: center;
@@ -878,6 +894,10 @@ canvas#panorama {
     text-align: center;
     justify-content: center;
     line-height: 1.4;
+  }
+
+  #mobile-asset-panel {
+    display: block;
   }
 }
 

@@ -29,6 +29,9 @@ const mobileSceneCurrent = document.getElementById('mobile-scene-current');
 const mobileScenePanel = document.getElementById('mobile-scene-panel');
 const mobileSceneClose = document.getElementById('mobile-scene-close');
 const mobileSceneList = document.getElementById('mobile-scene-list');
+const mobileAssetPanel = document.getElementById('mobile-asset-panel');
+const mobileAssetTitle = document.getElementById('mobile-asset-panel-title');
+const mobileAssetList = document.getElementById('mobile-asset-list');
 
 let currentScene = -1;
 let yaw = 0;
@@ -79,6 +82,7 @@ let currentAssetImageIndex = 0;
 let galleryTouchStartX = null;
 let galleryTouchDeltaX = 0;
 let isMobileScenePanelOpen = false;
+const SECTION_ASSETS = { Exterior: [], Interior: [] };
 
 function resize() {
   const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
@@ -235,6 +239,22 @@ function setMobileScenePanel(open) {
 
 function getSceneSection(scene) {
   return scene.name.startsWith('Exterior') ? 'Exterior' : 'Interior';
+}
+
+function refreshMobileAssetList(section) {
+  mobileAssetTitle.textContent = section === 'Exterior' ? 'Exterior Hotspots' : 'Interior Hotspots';
+  mobileAssetList.innerHTML = '';
+  const assets = SECTION_ASSETS[section] || [];
+  assets.forEach(({ asset }) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'mobile-menu-item';
+    button.innerHTML = `<span class="mobile-menu-copy"><span class="mobile-menu-title">${asset.label || asset.title}</span></span>`;
+    button.addEventListener('click', () => openAssetModal(asset));
+    mobileAssetList.appendChild(button);
+  });
+  mobileAssetPanel.classList.toggle('hidden', assets.length === 0);
+  mobileAssetPanel.setAttribute('aria-hidden', assets.length === 0 ? 'true' : 'false');
 }
 
 function buildHotspots(scene) {
@@ -583,6 +603,7 @@ function _applySceneSwap(index) {
   targetPitch = 0;
   fov = 120;
   buildHotspots(SCENES[index]);
+  refreshMobileAssetList(getSceneSection(SCENES[index]));
   needsRender = true;
 
   function applyImage(img) {
@@ -803,6 +824,9 @@ const stripEl = document.getElementById('scene-strip');
 
 SCENES.forEach((scene, index) => {
   const section = getSceneSection(scene);
+  (scene.assetHotspots || []).forEach(asset => {
+    SECTION_ASSETS[section].push({ asset });
+  });
   const prevScene = SCENES[index - 1];
   const prevSection = prevScene ? getSceneSection(prevScene) : null;
 
