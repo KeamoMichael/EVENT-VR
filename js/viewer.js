@@ -58,12 +58,14 @@ let rayDirections = null;
 
 const MAX_SOURCE_WIDTH = 6144;
 const BASE_MAX_PIXELS_DESKTOP = 1600000;
-const BASE_MAX_PIXELS_MOBILE = 700000;
+const BASE_MAX_PIXELS_MOBILE = 450000;
 const INTERACTION_QUALITY = 0.65;
 const IDLE_QUALITY = 1;
 const INTERACTION_SETTLE_MS = 140;
 const TOUCH_YAW_SENSITIVITY = 0.42;
 const TOUCH_PITCH_SENSITIVITY = 0.34;
+
+const isMobileScreen = () => window.innerWidth <= 768;
 
 let transitioning = false;
 let transitionAlpha = 0;
@@ -104,7 +106,7 @@ function prepareSourceImage(img) {
 }
 
 function updateRenderResolution(force = false) {
-  const baseMaxPixels = window.innerWidth <= 768 ? BASE_MAX_PIXELS_MOBILE : BASE_MAX_PIXELS_DESKTOP;
+  const baseMaxPixels = isMobileScreen() ? BASE_MAX_PIXELS_MOBILE : BASE_MAX_PIXELS_DESKTOP;
   const maxPixels = Math.max(180000, Math.round(baseMaxPixels * renderQuality));
   const aspect = canvas.width / canvas.height;
   const targetWidth = Math.min(canvas.width, Math.max(320, Math.round(Math.sqrt(maxPixels * aspect))));
@@ -148,8 +150,9 @@ function updateRayCache() {
 }
 
 function enterInteractionMode() {
-  if (renderQuality !== INTERACTION_QUALITY) {
-    renderQuality = INTERACTION_QUALITY;
+  const targetQuality = isMobileScreen() ? INTERACTION_QUALITY * 0.75 : INTERACTION_QUALITY;
+  if (renderQuality !== targetQuality) {
+    renderQuality = targetQuality;
     updateRenderResolution();
   }
 
@@ -494,6 +497,8 @@ function renderSpherical() {
 function loop(now = 0) {
   const dt = Math.min(now - lastFrameTime, 50);
   lastFrameTime = now;
+
+  if (isMobileScreen()) autoRotate = false;
 
   if (autoRotate && dt > 0 && assetModal.classList.contains('hidden')) {
     targetYaw += dt * 0.01;
