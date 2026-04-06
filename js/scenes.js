@@ -176,10 +176,10 @@ const SCENES = [
         pitch: 5,
         hitScale: 1.45,
         images: [
-          "images/CENTRE STAGE VR IMAGES/Centre Stage01.png",
-          "images/CENTRE STAGE VR IMAGES/Centre Stage02.png",
-          "images/CENTRE STAGE VR IMAGES/Centre Stage03.png",
-          "images/CENTRE STAGE VR IMAGES/Centre Stage04.png"
+          "images/CENTRE STAGE VR IMAGES/Centre Stage01_updated.png",
+          "images/CENTRE STAGE VR IMAGES/Centre Stage02_updated.png",
+          "images/CENTRE STAGE VR IMAGES/Centre Stage03_updated.png",
+          "images/CENTRE STAGE VR IMAGES/Centre Stage04_updated.png"
         ]
       },
       {
