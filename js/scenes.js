@@ -1,0 +1,331 @@
+const SCENES = [
+  {
+    name: "Exterior Arrival Court",
+    file: "images/PANORAMAS/EXTERIOR/scene1-marked.jpg",
+    hotspots: [
+      { targetScene: 2, label: "Walk to Overflow Side", yaw: -86, pitch: -26 },
+      { targetScene: 1, label: "Walk to Venue Front", yaw: 1, pitch: -25 }
+    ],
+    assetHotspots: [
+      {
+        label: "Outdoor Overflow",
+        title: "Outdoor Overflow",
+        category: "Exterior Lounge",
+        description: "Secondary outdoor guest area designed to absorb extra foot traffic while keeping guests connected to the main venue frontage.",
+        yaw: -150,
+        pitch: 3,
+        images: [
+          "images/OVERFLOW VR IMAGES/Overflow Exterior01.png",
+          "images/OVERFLOW VR IMAGES/Overflow Exterior02.png"
+        ]
+      },
+      {
+        label: "Photobooth",
+        title: "Photobooth",
+        category: "Interactive Feature",
+        description: "Exterior guest photo moment positioned along the arrival route for quick engagement and branded capture content.",
+        yaw: -6,
+        pitch: 3,
+        images: [
+          "images/PHOTOBOOTH VR IMAGES/Photobooth01.png",
+          "images/PHOTOBOOTH VR IMAGES/Photobooth02.png"
+        ]
+      },
+      {
+        label: "Welcome Area",
+        title: "Welcome Area",
+        category: "Guest Arrival",
+        description: "Primary welcome and check-in moment at the entrance edge, intended to anchor first impressions and guest guidance.",
+        yaw: 93,
+        pitch: 5,
+        images: [
+          "images/WELCOME AREA VR IMAGES/Welcome Area 01.png",
+          "images/WELCOME AREA VR IMAGES/Welcome Area 02.png",
+          "images/WELCOME AREA VR IMAGES/Welcome Area 03.png"
+        ]
+      }
+    ]
+  },
+  {
+    name: "Exterior Venue Front",
+    file: "images/PANORAMAS/EXTERIOR/scene2-marked.jpg",
+    hotspots: [
+      { targetScene: 0, label: "Back to Arrival Court", yaw: -94, pitch: -25 },
+      { targetScene: 3, label: "Walk to Far Front", yaw: 90, pitch: -25 }
+    ],
+    assetHotspots: [
+      {
+        label: "Welcome Area",
+        title: "Welcome Area",
+        category: "Guest Arrival",
+        description: "Branded entry zone positioned on the left side of the frontage view to receive guests before they move into the venue.",
+        yaw: -138,
+        pitch: 5,
+        images: [
+          "images/WELCOME AREA VR IMAGES/Welcome Area 01.png",
+          "images/WELCOME AREA VR IMAGES/Welcome Area 02.png",
+          "images/WELCOME AREA VR IMAGES/Welcome Area 03.png"
+        ]
+      },
+      {
+        label: "Photobooth",
+        title: "Photobooth",
+        category: "Interactive Feature",
+        description: "Photo activation positioned close to the main frontage for guest interaction during arrival and circulation.",
+        yaw: -48,
+        pitch: 4,
+        images: [
+          "images/PHOTOBOOTH VR IMAGES/Photobooth01.png",
+          "images/PHOTOBOOTH VR IMAGES/Photobooth02.png"
+        ]
+      },
+      {
+        label: "Outdoor Serving Area",
+        title: "Outdoor Serving Area",
+        category: "Hospitality",
+        description: "Exterior drinks and service point facing the front approach to support guest flow before entry.",
+        yaw: -20,
+        pitch: 2,
+        images: [
+          "images/OUTDOOR BAR VR IMAGES/Outdoor Bar01.png",
+          "images/OUTDOOR BAR VR IMAGES/Outdoor Bar02.png"
+        ]
+      }
+    ]
+  },
+  {
+    name: "Exterior Overflow Side",
+    file: "images/PANORAMAS/EXTERIOR/scene3-marked.jpg",
+    hotspots: [
+      { targetScene: 0, label: "Return to Arrival Court", yaw: -86, pitch: -25 }
+    ],
+    assetHotspots: [
+      {
+        label: "Welcome Area",
+        title: "Welcome Area",
+        category: "Guest Arrival",
+        description: "A smaller distant entry-facing read of the welcome zone from the overflow side of the venue.",
+        yaw: -154,
+        pitch: 4,
+        images: [
+          "images/WELCOME AREA VR IMAGES/Welcome Area 01.png",
+          "images/WELCOME AREA VR IMAGES/Welcome Area 02.png",
+          "images/WELCOME AREA VR IMAGES/Welcome Area 03.png"
+        ]
+      },
+      {
+        label: "Outdoor Food Station",
+        title: "Outdoor Food Station",
+        category: "Catering",
+        description: "External food service position facing the long venue edge, intended for quick guest access without crowding the main entry.",
+        yaw: 10,
+        pitch: 3,
+        images: [
+          "images/FOOD STATION VR IMAGES/Food Station.png",
+          "images/FOOD STATION VR IMAGES/Food Station 02.png"
+        ]
+      }
+    ]
+  },
+  {
+    name: "Exterior Far Front",
+    file: "images/PANORAMAS/EXTERIOR/scene4-marked.jpg",
+    hotspots: [
+      { targetScene: 1, label: "Back to Venue Front", yaw: -94, pitch: -26 },
+      { targetScene: 0, label: "Walk to Arrival Court", yaw: 85, pitch: -26 }
+    ],
+    assetHotspots: [
+      {
+        label: "Seating Area",
+        title: "Exterior Seating Area",
+        category: "Guest Seating",
+        description: "Front-facing outdoor seating zone arranged for casual waiting, informal conversation, and spill-out use.",
+        yaw: -6,
+        pitch: 4,
+        images: [
+          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area01.png",
+          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area02.png",
+          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area03.png"
+        ]
+      }
+    ]
+  },
+  {
+    name: "Interior Stage View",
+    file: "images/PANORAMAS/INTERIOR/interior scene 01.jpg",
+    hotspots: [
+      { targetScene: 5, label: "Move to Left Seating", yaw: -86, pitch: -26 },
+      { targetScene: 7, label: "Move to Right Seating", yaw: 87, pitch: -24 }
+    ],
+    assetHotspots: [
+      {
+        label: "Centre Stage",
+        title: "Centre Stage",
+        category: "Performance Feature",
+        description: "Feature performance platform positioned to the left of the main stage view, intended for artist moments and audience focus.",
+        yaw: -148,
+        pitch: 5,
+        hitScale: 1.45,
+        images: [
+          "images/CENTRE STAGE VR IMAGES/Centre Stage01.png",
+          "images/CENTRE STAGE VR IMAGES/Centre Stage02.png",
+          "images/CENTRE STAGE VR IMAGES/Centre Stage03.png",
+          "images/CENTRE STAGE VR IMAGES/Centre Stage04.png"
+        ]
+      },
+      {
+        label: "Stage",
+        title: "Main Stage",
+        category: "Venue Focus",
+        description: "Primary stage presentation area for performances, speeches, and key visual moments within the venue.",
+        yaw: 0,
+        pitch: 4,
+        images: [
+          "images/STAGE VR IMAGES/Stage01.png",
+          "images/STAGE VR IMAGES/Stage02.png"
+        ]
+      }
+    ]
+  },
+  {
+    name: "Interior Left Seating",
+    file: "images/PANORAMAS/INTERIOR/interior scene 02.jpg",
+    hotspots: [
+      { targetScene: 4, label: "Back to Stage View", yaw: 1, pitch: -24 }
+    ],
+    assetHotspots: [
+      {
+        label: "Seating Area",
+        title: "Left Seating Area",
+        category: "Guest Seating",
+        description: "Lounge seating cluster on the left side of the interior, intended for table service and social seating.",
+        yaw: -124,
+        pitch: 4,
+        images: [
+          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area01.png",
+          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area02.png",
+          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area03.png"
+        ]
+      },
+      {
+        label: "Seating Area",
+        title: "Right Seating Area",
+        category: "Guest Seating",
+        description: "Mirrored seating cluster on the opposite side of the stage-facing interior layout.",
+        yaw: 52,
+        pitch: 4,
+        images: [
+          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area01.png",
+          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area02.png",
+          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area03.png"
+        ]
+      },
+      {
+        label: "Sound & Lighting Booth",
+        title: "Sound and Lighting Booth",
+        category: "Technical Control",
+        description: "Control position for live audio and lighting execution, located toward the right edge of the interior lounge view.",
+        yaw: 102,
+        pitch: 2,
+        images: [
+          "images/SOUND & LIGHTING BOOTH VR IMAGES/SOUND & LIGHTING.png"
+        ]
+      },
+      {
+        label: "Mounted LED Screen",
+        title: "Mounted LED Screen",
+        category: "AV Display",
+        description: "Large-format mounted display for dynamic branding, show content, and live visual reinforcement.",
+        yaw: 113,
+        pitch: 1,
+        images: [
+          "images/LED SCREENS/INDOOR LED SCREEN01.png",
+          "images/LED SCREENS/INDOOR LED SCREEN02.png"
+        ]
+      }
+    ]
+  },
+  {
+    name: "Interior Central Seating",
+    file: "images/PANORAMAS/INTERIOR/interior scene 03.jpg",
+    hotspots: [
+      { targetScene: 4, label: "Move to Stage View", yaw: 0, pitch: -23 }
+    ],
+    assetHotspots: [
+      {
+        label: "Seating Area",
+        title: "Left Seating Area",
+        category: "Guest Seating",
+        description: "Left-side guest seating cluster seen from the central seating perspective.",
+        yaw: -126,
+        pitch: 4,
+        images: [
+          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area01.png",
+          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area02.png",
+          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area03.png"
+        ]
+      },
+      {
+        label: "Seating Area",
+        title: "Right Seating Area",
+        category: "Guest Seating",
+        description: "Right-side guest seating cluster visible from the central interior axis.",
+        yaw: 63,
+        pitch: 4,
+        images: [
+          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area01.png",
+          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area02.png",
+          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area03.png"
+        ]
+      },
+      {
+        label: "DJ Booth",
+        title: "DJ Booth",
+        category: "Entertainment",
+        description: "DJ control and entertainment point positioned on the right side of the interior layout.",
+        yaw: 105,
+        pitch: 3,
+        images: [
+          "images/DJ BOOTH VR IMAGES/DJ Booth01.png",
+          "images/DJ BOOTH VR IMAGES/DJ Booth02.png"
+        ]
+      }
+    ]
+  },
+  {
+    name: "Interior Right Seating",
+    file: "images/PANORAMAS/INTERIOR/interior scene 04.jpg",
+    hotspots: [
+      { targetScene: 5, label: "Move to Left Seating", yaw: -92, pitch: -22 },
+      { targetScene: 6, label: "Move to Central Seating", yaw: 15, pitch: -26 }
+    ],
+    assetHotspots: [
+      {
+        label: "Seating Area",
+        title: "Left Seating Area",
+        category: "Guest Seating",
+        description: "Left-side seating section seen from the right seating panorama.",
+        yaw: -122,
+        pitch: 4,
+        images: [
+          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area01.png",
+          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area02.png",
+          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area03.png"
+        ]
+      },
+      {
+        label: "Seating Area",
+        title: "Right Seating Area",
+        category: "Guest Seating",
+        description: "Front-right seating cluster positioned close to the circulation path in the right lounge view.",
+        yaw: 48,
+        pitch: 4,
+        images: [
+          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area01.png",
+          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area02.png",
+          "images/BALCONY SEATING VR IMAGES/Balcony Seating Area03.png"
+        ]
+      }
+    ]
+  }
+];

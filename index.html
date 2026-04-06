@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event Venue — 360° VR Tour</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- LOADING SCREEN -->
+  <div id="loading">
+    <div class="loader-ring"></div>
+    <p>Loading venue</p>
+  </div>
+
+  <!-- PANORAMA CANVAS (hotspot arrows drawn directly on this) -->
+  <div id="viewer">
+    <canvas id="panorama"></canvas>
+  </div>
+
+  <!-- TOP BAR -->
+  <div id="topbar">
+    <div class="project-title">Event <span>Venue</span></div>
+    <div class="scene-counter" id="counter">01 / 03</div>
+  </div>
+
+  <!-- SCENE NAME -->
+  <div id="scene-label">
+    <div class="num"  id="label-num">01</div>
+    <div class="name" id="label-name">Arrival</div>
+  </div>
+
+  <!-- HOTSPOT LEGEND -->
+  <div id="hotspot-hint">
+    <div class="hs-icon">&#8679;</div>
+    <span>Tap baked markers for details · use arrows or menu to move scenes</span>
+  </div>
+
+  <!-- AUTO-ROTATE STATUS -->
+  <div id="autorotate-indicator">● Auto-rotating</div>
+
+  <!-- SIDE SCENE MENU -->
+  <div id="scene-menu"></div>
+  <div id="mobile-scene-ui">
+    <button id="mobile-scene-toggle" type="button" aria-expanded="false" aria-controls="mobile-scene-panel">
+      <span class="mobile-scene-toggle-label">Scenes</span>
+      <span id="mobile-scene-current">Interior Asset View</span>
+    </button>
+    <div id="mobile-scene-panel" class="hidden" aria-hidden="true">
+      <div class="mobile-scene-panel-header">
+        <span>Scene Navigation</span>
+        <button id="mobile-scene-close" type="button" aria-label="Close scene navigation">&times;</button>
+      </div>
+      <div id="mobile-scene-list"></div>
+    </div>
+  </div>
+
+  <!-- BOTTOM NAV ARROWS -->
+  <div id="nav">
+    <button class="nav-btn" id="btn-prev" title="Previous scene">&#8592;</button>
+    <button class="nav-btn" id="btn-next" title="Next scene">&#8594;</button>
+  </div>
+
+  <!-- BOTTOM DOT STRIP -->
+  <div id="scene-strip"></div>
+
+  <!-- HINT -->
+  <div id="hint">Drag to look &nbsp;·&nbsp; Scroll to zoom &nbsp;·&nbsp; Tap baked labels for asset details</div>
+
+  <!-- FULLSCREEN -->
+  <button id="fs-btn" title="Toggle fullscreen">&#x26F6;</button>
+
+  <!-- ASSET MODAL -->
+  <div id="asset-modal" class="hidden" aria-hidden="true">
+    <div id="asset-modal-backdrop"></div>
+    <div id="asset-modal-panel" role="dialog" aria-modal="true" aria-labelledby="asset-title">
+      <button id="asset-close" type="button" aria-label="Close asset details">&times;</button>
+      <div class="asset-modal-copy">
+        <div class="asset-kicker" id="asset-kicker">Asset details</div>
+        <h2 id="asset-title">Asset Title</h2>
+        <p id="asset-description"></p>
+      </div>
+      <div class="asset-gallery">
+        <button class="asset-gallery-nav" id="asset-prev" type="button" aria-label="Previous image">&#8592;</button>
+        <div class="asset-gallery-stage">
+          <img id="asset-image" alt="" />
+          <div id="asset-empty-state" class="hidden">Stage render images will appear here once files are added to `images/STAGE VR IMAGES`.</div>
+        </div>
+        <button class="asset-gallery-nav" id="asset-next" type="button" aria-label="Next image">&#8594;</button>
+      </div>
+      <div id="asset-dots" aria-label="Asset image navigation"></div>
+      <div id="asset-thumbs" aria-label="Asset image thumbnails"></div>
+    </div>
+  </div>
+
+  <!--
+    ┌──────────────────────────────────────────────────────────┐
+    │  ADD YOUR PANORAMAS:                                     │
+    │  1. Place rendered equirectangular .png files in        │
+    │     the /images/ folder                                  │
+    │  2. Update scenes.js with the correct filenames         │
+    │  3. Adjust hotspot yaw values in scenes.js to match     │
+    │     where each destination appears in your panorama     │
+    │     Use: window.DEBUG_YAW = true in browser console     │
+    └──────────────────────────────────────────────────────────┘
+  -->
+  <script src="js/scenes.js"></script>
+  <script src="js/viewer.js"></script>
+
+</body>
+</html>
