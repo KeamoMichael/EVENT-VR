@@ -11,9 +11,10 @@ const SCENES = [
         label: "Outdoor Overflow",
         title: "Outdoor Overflow",
         category: "Exterior Lounge",
-        description: "Secondary outdoor guest area designed to absorb extra foot traffic while keeping guests connected to the main venue frontage.",
-        yaw: -150,
-        pitch: 3,
+        description: "Secondary exterior overflow lounge designed to absorb extra foot traffic while keeping guests connected to the main venue frontage.",
+        yaw: -85,
+        pitch: 4,
+        hitScale: 1.4,
         images: [
           "images/OVERFLOW VR IMAGES/Overflow Exterior01.png",
           "images/OVERFLOW VR IMAGES/Overflow Exterior02.png"
@@ -26,6 +27,7 @@ const SCENES = [
         description: "Exterior guest photo moment positioned along the arrival route for quick engagement and branded capture content.",
         yaw: -6,
         pitch: 3,
+        hitScale: 1.2,
         images: [
           "images/PHOTOBOOTH VR IMAGES/Photobooth01.png",
           "images/PHOTOBOOTH VR IMAGES/Photobooth02.png"
@@ -35,9 +37,10 @@ const SCENES = [
         label: "Welcome Area",
         title: "Welcome Area",
         category: "Guest Arrival",
-        description: "Primary welcome and check-in moment at the entrance edge, intended to anchor first impressions and guest guidance.",
+        description: "Primary welcome and check-in moment at the entrance edge, now linked directly to the dedicated welcome area render set.",
         yaw: 93,
         pitch: 5,
+        hitScale: 1.25,
         images: [
           "images/WELCOME AREA VR IMAGES/Welcome Area 01.png",
           "images/WELCOME AREA VR IMAGES/Welcome Area 02.png",
@@ -61,6 +64,7 @@ const SCENES = [
         description: "Branded entry zone positioned on the left side of the frontage view to receive guests before they move into the venue.",
         yaw: -138,
         pitch: 5,
+        hitScale: 1.2,
         images: [
           "images/WELCOME AREA VR IMAGES/Welcome Area 01.png",
           "images/WELCOME AREA VR IMAGES/Welcome Area 02.png",
@@ -74,6 +78,7 @@ const SCENES = [
         description: "Photo activation positioned close to the main frontage for guest interaction during arrival and circulation.",
         yaw: -48,
         pitch: 4,
+        hitScale: 1.2,
         images: [
           "images/PHOTOBOOTH VR IMAGES/Photobooth01.png",
           "images/PHOTOBOOTH VR IMAGES/Photobooth02.png"
@@ -86,6 +91,7 @@ const SCENES = [
         description: "Exterior drinks and service point facing the front approach to support guest flow before entry.",
         yaw: -20,
         pitch: 2,
+        hitScale: 1.2,
         images: [
           "images/OUTDOOR BAR VR IMAGES/Outdoor Bar01.png",
           "images/OUTDOOR BAR VR IMAGES/Outdoor Bar02.png"
@@ -107,6 +113,7 @@ const SCENES = [
         description: "A smaller distant entry-facing read of the welcome zone from the overflow side of the venue.",
         yaw: -154,
         pitch: 4,
+        hitScale: 1.15,
         images: [
           "images/WELCOME AREA VR IMAGES/Welcome Area 01.png",
           "images/WELCOME AREA VR IMAGES/Welcome Area 02.png",
@@ -114,12 +121,13 @@ const SCENES = [
         ]
       },
       {
-        label: "Outdoor Food Station",
-        title: "Outdoor Food Station",
+        label: "Food Station",
+        title: "Food Station",
         category: "Catering",
         description: "External food service position facing the long venue edge, intended for quick guest access without crowding the main entry.",
         yaw: 10,
         pitch: 3,
+        hitScale: 1.2,
         images: [
           "images/FOOD STATION VR IMAGES/Food Station.png",
           "images/FOOD STATION VR IMAGES/Food Station 02.png"
@@ -142,6 +150,7 @@ const SCENES = [
         description: "Front-facing outdoor seating zone arranged for casual waiting, informal conversation, and spill-out use.",
         yaw: -6,
         pitch: 4,
+        hitScale: 1.25,
         images: [
           "images/BALCONY SEATING VR IMAGES/Balcony Seating Area01.png",
           "images/BALCONY SEATING VR IMAGES/Balcony Seating Area02.png",
@@ -175,11 +184,12 @@ const SCENES = [
       },
       {
         label: "Stage",
-        title: "Main Stage",
+        title: "Stage",
         category: "Venue Focus",
         description: "Primary stage presentation area for performances, speeches, and key visual moments within the venue.",
         yaw: 0,
         pitch: 4,
+        hitScale: 1.35,
         images: [
           "images/STAGE VR IMAGES/Stage01.png",
           "images/STAGE VR IMAGES/Stage02.png"
@@ -201,6 +211,7 @@ const SCENES = [
         description: "Lounge seating cluster on the left side of the interior, intended for table service and social seating.",
         yaw: -124,
         pitch: 4,
+        hitScale: 1.2,
         images: [
           "images/BALCONY SEATING VR IMAGES/Balcony Seating Area01.png",
           "images/BALCONY SEATING VR IMAGES/Balcony Seating Area02.png",
@@ -214,6 +225,7 @@ const SCENES = [
         description: "Mirrored seating cluster on the opposite side of the stage-facing interior layout.",
         yaw: 52,
         pitch: 4,
+        hitScale: 1.2,
         images: [
           "images/BALCONY SEATING VR IMAGES/Balcony Seating Area01.png",
           "images/BALCONY SEATING VR IMAGES/Balcony Seating Area02.png",
@@ -227,6 +239,7 @@ const SCENES = [
         description: "Control position for live audio and lighting execution, located toward the right edge of the interior lounge view.",
         yaw: 102,
         pitch: 2,
+        hitScale: 1.2,
         images: [
           "images/SOUND & LIGHTING BOOTH VR IMAGES/SOUND & LIGHTING.png"
         ]
@@ -238,6 +251,7 @@ const SCENES = [
         description: "Large-format mounted display for dynamic branding, show content, and live visual reinforcement.",
         yaw: 113,
         pitch: 1,
+        hitScale: 1.2,
         images: [
           "images/LED SCREENS/INDOOR LED SCREEN01.png",
           "images/LED SCREENS/INDOOR LED SCREEN02.png"
@@ -259,6 +273,7 @@ const SCENES = [
         description: "Left-side guest seating cluster seen from the central seating perspective.",
         yaw: -126,
         pitch: 4,
+        hitScale: 1.2,
         images: [
           "images/BALCONY SEATING VR IMAGES/Balcony Seating Area01.png",
           "images/BALCONY SEATING VR IMAGES/Balcony Seating Area02.png",
@@ -272,6 +287,7 @@ const SCENES = [
         description: "Right-side guest seating cluster visible from the central interior axis.",
         yaw: 63,
         pitch: 4,
+        hitScale: 1.2,
         images: [
           "images/BALCONY SEATING VR IMAGES/Balcony Seating Area01.png",
           "images/BALCONY SEATING VR IMAGES/Balcony Seating Area02.png",
@@ -285,6 +301,7 @@ const SCENES = [
         description: "DJ control and entertainment point positioned on the right side of the interior layout.",
         yaw: 105,
         pitch: 3,
+        hitScale: 1.2,
         images: [
           "images/DJ BOOTH VR IMAGES/DJ Booth01.png",
           "images/DJ BOOTH VR IMAGES/DJ Booth02.png"
@@ -296,7 +313,7 @@ const SCENES = [
     name: "Interior Right Seating",
     file: "images/PANORAMAS/INTERIOR/interior scene 04.jpg",
     hotspots: [
-      { targetScene: 5, label: "Move to Left Seating", yaw: -92, pitch: -22 },
+      { targetScene: 4, label: "Move to Stage View", yaw: -92, pitch: -22 },
       { targetScene: 6, label: "Move to Central Seating", yaw: 15, pitch: -26 }
     ],
     assetHotspots: [
@@ -307,6 +324,7 @@ const SCENES = [
         description: "Left-side seating section seen from the right seating panorama.",
         yaw: -122,
         pitch: 4,
+        hitScale: 1.2,
         images: [
           "images/BALCONY SEATING VR IMAGES/Balcony Seating Area01.png",
           "images/BALCONY SEATING VR IMAGES/Balcony Seating Area02.png",
@@ -320,6 +338,7 @@ const SCENES = [
         description: "Front-right seating cluster positioned close to the circulation path in the right lounge view.",
         yaw: 48,
         pitch: 4,
+        hitScale: 1.2,
         images: [
           "images/BALCONY SEATING VR IMAGES/Balcony Seating Area01.png",
           "images/BALCONY SEATING VR IMAGES/Balcony Seating Area02.png",

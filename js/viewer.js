@@ -62,6 +62,8 @@ const BASE_MAX_PIXELS_MOBILE = 700000;
 const INTERACTION_QUALITY = 0.65;
 const IDLE_QUALITY = 1;
 const INTERACTION_SETTLE_MS = 140;
+const TOUCH_YAW_SENSITIVITY = 0.42;
+const TOUCH_PITCH_SENSITIVITY = 0.34;
 
 let transitioning = false;
 let transitionAlpha = 0;
@@ -710,8 +712,9 @@ viewerEl.addEventListener('touchmove', event => {
   enterInteractionMode();
   const dx = event.touches[0].clientX - lastX;
   const dy = event.touches[0].clientY - lastY;
-  targetYaw += dx * 0.3;
-  targetPitch -= dy * 0.3;
+  // On touch, move the panorama opposite the finger so the scene follows natural swipe expectations.
+  targetYaw -= dx * TOUCH_YAW_SENSITIVITY;
+  targetPitch -= dy * TOUCH_PITCH_SENSITIVITY;
   targetPitch = Math.max(-75, Math.min(75, targetPitch));
   lastX = event.touches[0].clientX;
   lastY = event.touches[0].clientY;
