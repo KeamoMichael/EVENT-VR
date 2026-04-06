@@ -520,9 +520,12 @@ canvas#panorama {
 
 #mobile-asset-toggle {
   width: 100%;
-  padding: 10px 16px;
+  padding: 14px 16px;
   border-radius: 20px;
   margin-top: 10px;
+  border: 1px solid var(--glass-border);
+  background: rgba(7, 7, 7, 0.78);
+  color: #fff;
   backdrop-filter: blur(16px);
   display: flex;
   align-items: center;
